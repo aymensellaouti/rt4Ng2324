@@ -1,0 +1,30 @@
+<form #formulaire="ngForm">
+  <input
+    required
+    minlength="4"
+    type="text"
+    class="form-control"
+    name="name"
+    ngModel
+    #nameInput="ngModel"
+    [ngModelOptions]="{ updateOn: 'blur' }"
+  />
+  <div *ngIf="nameInput.invalid && nameInput.dirty" class="alert alert-danger">
+    Veuillez renseigner un nom avec 4 caractères
+  </div>
+  <input
+    required
+    type="number"
+    class="form-control"
+    name="age"
+    pattern="[0,1]?\d{1,2}"
+    ngModel
+  />
+  <button
+    [disabled]="formulaire.invalid"
+    class="btn btn-primary m-2"
+    (click)="processForm(formulaire)"
+  >
+    submit
+  </button>
+</form>

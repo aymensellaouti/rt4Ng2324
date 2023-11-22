@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { MathService } from "../../services/math.service";
 
 @Component({
   selector: "app-first",
@@ -6,7 +7,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./first.component.css"],
 })
 export class FirstComponent {
-  constructor() {}
+  constructor(private mathService: MathService) {}
   //state => attributes
   isHidden = true;
   message = "";
@@ -14,5 +15,9 @@ export class FirstComponent {
   // behaviour => methods
   showHide() {
     this.isHidden = !this.isHidden;
+  }
+
+  test() {
+    this.mathService.showComputed();
   }
 }

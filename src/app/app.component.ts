@@ -7,4 +7,5 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "ngRT42023";
+  test = 7;
 }

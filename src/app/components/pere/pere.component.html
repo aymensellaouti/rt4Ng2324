@@ -1,0 +1,10 @@
+<p appHighlight>pere works!</p>
+<p appHighlight [in]="'green'" [out]="'black'">pere works!</p>
+<p appHighlight [in]="'red'" [out]="'white'">pere works!</p>
+<app-fils (sendDataToDad)="getMessage($event)"></app-fils>
+<input type="number" class="form-control" [(ngModel)]="x" />
+<input type="number" class="form-control" [(ngModel)]="y" />
+
+{{ calcul() }}
+
+<app-first></app-first>
